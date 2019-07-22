@@ -53,5 +53,3 @@ Note this is the same macro (but with other input settings) as Lifetimes14_for_P
 - 96 wells or 384 wells: this selects the format of the well plate.
 
 
-## links
-[Visualizing heterogeneity](http://thenode.biologists.com/visualizing-heterogeneity-of-imaging-data/research/)
