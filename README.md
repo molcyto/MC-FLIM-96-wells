@@ -43,13 +43,13 @@ Note this is the same macro (but with other input settings) as Lifetimes14_for_P
 - Make additional image stack: If selected it makes an additional output stack of the analyzed data without text labels.
 - Time between FLIM stacks: This is a dummy input for 96 wells FLIM analysis, but it can be used for analyzing FLIM timelapse hyperstacks.
 - Time lapse units: This is a dummy input for 96 wells FLIM analysis, but it can be used for analyzing FLIM timelapse hyperstacks.
-- Display only Tau(phi), only Tau(mod), or both: Depending on what is selected the output image will contain the information on Tau(phi), Tau(mod) or both
+- Display only Tau(phi), only Tau(mod), or both: Depending on what is selected the output image will contain the information on Tau(phi), Tau(mod) or both.
 - Colortable for Lifetime Images: Different color tables can be selected for the output lifetime images. 
 - Colortable for Intensity Images: Different color tables can be selected for intensity images in the output. 
 - Background: Sets the color of the background in the output image.
 - Foreground: Sets the color of the foreground and text in the output image. 
 - Import/export metadata from FLIM screen: If selected it tells the macro it is dealing with multiwell data. The metadata should contain the frame number, well position, name, exposure time and comment for each acquired FLIM image according to this format: "frame0001=A1, mScarlet, 100.0, U2OS cells" in the metadata (without the quotes). The frame number should refer to frame number in the image hyperstack, A1 to the position in the well, mScarlet is the sample ID, 100.0 is the exposure time and U2OS cells is a comment. Each frame number/well position should have a separate line in the metadata.
-- Export logfile with lifetime data from FLIM screen: If selected a tab delimited text file is generated with the quantified data from the multiwell plate. If saved as .csv file it can be directly Imported into Microsoft Excel.
+- Export logfile with lifetime data from FLIM screen: If selected a tab delimited text file is generated with the quantified data from the multiwell plate. If saved as .csv file it can be directly imported into Microsoft Excel.
 - 96 wells or 384 wells: this selects the format of the well plate.
 
 
