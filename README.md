@@ -18,9 +18,9 @@ ImageJ & FIJI macro's can be dragged and dropped on the toolbar, which opens the
 Macros can also be loaded via Plugins->Macros menu, either use Edit or Run.
 
 ## Test data
-Test can be downloaded from following zenodo repository : https://doi.org/10.5281/zenodo.3338150
+Test can be downloaded from following zenodo repository : https://doi.org/10.5281/zenodo.3338264
 
-[download test data](https://zenodo.org/record/3338150/files/Testdata_SupSoftw_4_FLIM_96wells.zip?download=1)
+[download test data](https://zenodo.org/record/3338264/files/Testdata_SupSoftw_4_FLIM_96wells.zip?download=1)
 
 ## Screenshot of input dialog for FLIM_96wells_macro_v14.ijm
 <img src="https://github.com/molcyto/MC-FLIM-96-wells/blob/master/Screenshot%20FLIM_96wells_macro_v14.png" width="600">
