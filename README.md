@@ -29,18 +29,28 @@ Test can be downloaded from following zenodo repository : https://doi.org/10.528
 Note this is the same macro (but with other input settings) as Lifetimes14_for_Petridish.
 - Work on current image or load from directory: Here you can choose to either use the current (e.g. a hyperstack with 96 positions each with 3 FLIM images: DC, tau(phi), tau(mod) ) image already displayed in ImageJ, or you load a file from a directory. The latter should be a hyperstack image with for instance 96 or 384 positions and 3 images per position: a DC image, a tau(phi) image and a tau(mod) image. These tau(phi) and tau(mod) images should have the fluorescence lifetimes in ps (1000x ns).
 - Minimal/Maximal Tau for display (ns): Sets the minimal/maximal value of the lookup table for display of the lifetime values.
-
-- Fixed threshold value or modal value threshold: Here you can choose how cells are recognized in the first time point image of the bleach series, either by selecting a fixed threshold intensity above which you assume there are cells, or a modal value determination that determines the modal (background) grey value and uses a statistical evaluation of pixels above this background.
-- In case of fixed threshold, what intensity over the background: in case the previous choice was fixed, this is the lower intensity threshold for selecting cells in the analysis, otherwise this is a dummy input.
-- Lower Threshold=number x Stdev + modal: In case a modal threshold was chosen for analysis, this value sets the lower intensity threshold for analysis based on the modal value + this input times the standard deviation found in the image. In case a fixed intensity threshold is chosen this is a dummy input.
-- Keep cell ROIs: if selected an output image stack is generated with all analyzed cell ROIs per well.
-- Create output 96/384 well tau image: if selected a colored bleach time to 50% of initial intensity image is generated.
-- Low/high threshold for 50% time (2x): sets the minimal/maximal 50% bleach time for display in the colored bleach time multiwell image. 
-- Automatic determination of thresholds: If selected, the previous 2 inputs will be overruled and the macro will scale the tau multiwell output image according to the minimal and maximal measured 50% bleach times.
-- Create output 96/384 well non-bleached image: If selected, a multiwell image is added of the percent of initial intensity remaining in the last point of the acquired bleach time series. 
-- Create output 96/384 well initial intensity image: If selected, a multiwell image is added of the detected average initial intensity. This is useful for inspecting wells with very bright or dim cells.
-- Start row/Column: In case not an entire 96 well or 384 well is screened but a subsection of the plate, the first well (row, column) can be chosen. In case a 24 well plate is used, a 24 well plate output can be made by selecting E7 as first well.
-- 96 wells or 384 wells: here the well plate format can be selected.
+- Fixed background value or modal value background: Here you can choose how cells are recognized in the DC image, either by selecting a fixed threshold intensity above which you assume there are cells, or a modal value determination that determines the modal (background) grey value and uses a statistical evaluation of pixels above this background.
+- In case of fixed BG, low threshold for Intensity: in case the previous choice was fixed, this is the lower intensity threshold in the DC image for selecting cells in the analysis, otherwise this is a dummy input.
+- In case of modal BF: low Threshold=number x Stdev + modal: In case a modal threshold was chosen for analysis, this value sets the lower intensity threshold for analysis based on the modal value + this input times the standard deviation found in the image. In case a fixed intensity threshold is chosen this is a dummy input.
+Minimal object size for lifetime analysis (pixels): The smallest object in number of pixels that is selected for lifetime determination.
+- High threshold for Intensity: Upper intensity limit in DC image for lifetime analysis. Pixels with higher intensity (e.g. due to overexposure) will be rejected.
+- Gamma for Intensity: Gamma value for displaying output image. A gamma value of 1 will produce standard output. A gamma value<1 will emphasize more the cells with lower fluorescence intensity.
+- Modulation frequency (MHz): Here use the modulation frequency in MegaHertz for drawing the polar plots.
+- Threshold intensity image: if selected, in the output the DC image will be thresholded according to the background/threshold settings.
+- Exclude analysis for I>Ihigh: Excludes analysis of pixels with output intensity over this intensity limit (the value is set as high threshold for intensity). Also histograms are scaled to this value.
+- Automatic determination of Ihigh: if selected the macro will define the maximum value for scaling automatically
+- Include 2D histograms: If selected the output image stack will contain 2D histograms if intensity vs lifetime and polar plots.
+- Make additional image stack: If selected it makes an additional output stack of the analyzed data without text labels.
+- Time between FLIM stacks: This is a dummy input for 96 wells FLIM analysis, but it can be used for analyzing FLIM timelapse hyperstacks.
+- Time lapse units: This is a dummy input for 96 wells FLIM analysis, but it can be used for analyzing FLIM timelapse hyperstacks.
+- Display only Tau(phi), only Tau(mod), or both: Depending on what is selected the output image will contain the information on Tau(phi), Tau(mod) or both
+- Colortable for Lifetime Images: Different color tables can be selected for the output lifetime images. 
+- Colortable for Intensity Images: Different color tables can be selected for intensity images in the output. 
+- Background: Sets the color of the background in the output image.
+- Foreground: Sets the color of the foreground and text in the output image. 
+- Import/export metadata from FLIM screen: If selected it tells the macro it is dealing with multiwell data. The metadata should contain the frame number, well position, name, exposure time and comment for each acquired FLIM image according to this format: "frame0001=A1, mScarlet, 100.0, U2OS cells" in the metadata (without the quotes). The frame number should refer to frame number in the image hyperstack, A1 to the position in the well, mScarlet is the sample ID, 100.0 is the exposure time and U2OS cells is a comment. Each frame number/well position should have a separate line in the metadata.
+- Export logfile with lifetime data from FLIM screen: If selected a tab delimited text file is generated with the quantified data from the multiwell plate. If saved as .csv file it can be directly Imported into Microsoft Excel.
+- 96 wells or 384 wells: this selects the format of the well plate.
 
 
 ## links
