@@ -181,12 +181,12 @@ if(mod_or_phi=="Tau(mod)")  oy=oooy;
 
 //==========================================================
 //input metadata
-
+// changed initialization of the array from 384 to 385
 
 if(inputmetadata==true){
 	metadata2=getMetadata("Info");
 // below added by Marten for readout from metadata
-	fre = getMETAInfo(metadata2, "frequency");	
+	fre = getMETAInfo(metadata2, "frequency");
 //s	print(fre);
 	metadata=split(metadata2,"\n");
 //	for (i=0;i<metadata.length;i++) {
