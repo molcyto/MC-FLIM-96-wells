@@ -193,17 +193,17 @@ if(inputmetadata==true){
 //			print("metadata["+i+"]="+metadata[i]);
 //	}
 	k=0;
-	welldata=newArray(384);
-	wellpos=newArray(384);
-	wellinfo1=newArray(384);
-	wellinfo2=newArray(384);
-	wellx=newArray(384);
-	welly=newArray(384);
-	well_taup=newArray(384);
-	well_taup_sd=newArray(384);
-	well_taum=newArray(384);
-	well_taum_sd=newArray(384);
-	well_int=newArray(384);
+	welldata=newArray(385);
+	wellpos=newArray(385);
+	wellinfo1=newArray(385);
+	wellinfo2=newArray(385);
+	wellx=newArray(385);
+	welly=newArray(385);
+	well_taup=newArray(385);
+	well_taup_sd=newArray(385);
+	well_taum=newArray(385);
+	well_taum_sd=newArray(385);
+	well_int=newArray(385);
 	fre=0;
 	for (j=0;j<metadata.length;j++) {
 		if(startsWith(metadata[j],"frequency")==true) {
@@ -215,7 +215,7 @@ if(inputmetadata==true){
 		if (startsWith(metadata[j],"frame0")==true) {
 			k=k+1;
 			sinfo=split(metadata[j],"=");
-			welldata[k]=sinfo[1];
+ 			welldata[k]=sinfo[1];
 			subs=split(welldata[k],",");
 			wellpos[k]=subs[0];
 			wellinfo1[k]=subs[1];
